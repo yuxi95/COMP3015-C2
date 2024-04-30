@@ -1,0 +1,63 @@
+# Blender 4.0.2 MTL File: 'None'
+# www.blender.org
+
+newmtl 12213_bird
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd 12213_bird_diffuse.jpg
+map_Bump Map__7_Normal Bump.jpg
+
+newmtl claws
+Ns 73.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.220000 0.220000 0.220000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd default.png
+
+newmtl skin
+Ns 72.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.060000 0.060000 0.060000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd textures/plus grande.jpg
+
+newmtl skin_without_scale
+Ns 72.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.060000 0.060000 0.060000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd textures/plus grande.jpg
+
+newmtl toothless_eye
+Ns 100.000015
+Ka 1.000000 1.000000 1.000000
+Ks 0.230000 0.230000 0.230000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd textures/sofwsrfqhpa11.png
+
+newmtl viking_logo
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd default.png
