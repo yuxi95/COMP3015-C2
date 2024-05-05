@@ -1,27 +1,27 @@
-初始化：
+# Idea:
+This time I continued to use the last model, choosing the Low Poly style and cartoon-style coloring. The ideas came from dolphin pirates and Pac-Man. This time, an idea was implemented to gain points by moving the dolphin treasure hunt up, down, left, and right through keyboard control.
+# Gameplay:
+The player controls the dolphin (using the direction keys) and scores points when touching the block objects in the scene. The score is related to the remaining time for the block to be reset (100 + remaining time * 100). The total score is printed in the window title, every certain time (2 ~3s), the block is reset to a random position and will move immediately when touched by the player.
+# initialization:
+Create a normal map:normal_texutre ,
+Create a projection map:proj_texture,
 
-创建法线贴图：normal_texutre ,
-创建投影贴图: proj_texture,
+Generate FBO (frame buffer object), set FBO to only write depth, and shadow only needs depth information
+Generate depth-texture, using float format to meet the accuracy required for shadow calculation
+Bind depth-texture to depth-attachment of FBO
+Use std::vector to save objects that produce shadows in the scene
 
-生成 FBO ( frame buffer object)，设置 FBO 仅写入 depth， 阴影仅需深度信息 
-生成 depth-texture ， 使用 float 格式满足阴影计算所需精度
-绑定 depth-texture 到 FBO 的depth-attachment
-使用 std::vector保存场景中会产生阴影的物体
+# Frame start:
+# Game logic:
 
-帧开始：
+Activate FBO and draw depth map
+Traverse the scene object vecotr, use depth.vert/frag shader to draw the scene from the light perspective, and obtain the depth map of the light direction.
 
-游戏逻辑：
+Cancel the FBO and draw the final scene
+Traverse the scene object vecotr, use shadowmap.vert/frag shader to draw the scene from a normal perspective, use the depth map obtained in the previous step combined with the shadow-map algorithm to generate shadows, use normal_texutre to process the normal map, and use the light matrix projection map proj_texture
 
-玩家控制海豚（使用方向键），接触到场景中的方块物体就得分，分数和方块重置的剩余时间有关（100+ 剩余时间*100），总分数打印在窗口标题，每隔一定时间（2~3s),方块重置到随机位置，被玩家触碰到也会立即移动。
+shadow map viewprot
+The generation of the depth map itself belongs to render-to-texture technology. We can set up a 128x128 viewport and then draw a screen-quad of the depth map to view the texture.
 
-激活 FBO，绘制深度图
-遍历场景物体vecotr，使用 depth.vert/frag shader 从灯光视角绘制场景，得到灯光方向的深度图
-
-取消 FBO，绘制最终场景
-遍历场景物体vecotr，使用 shadowmap.vert/frag shader 从正常视角绘制场景, 使用上一步得到的深度图结合shadow-map算法生成阴影， 使用normal_texutre处理法线贴图， 同时使用灯光矩阵投影贴图proj_texture
-
-阴影图 viewprot
-深度图的生成本身属于render-to-texture技术，我们可以设置一个128x128的viewport，然后绘制一个深度图的screen-quad，用来查看这个texture，
-
-输入处理：
-按数字键8开关shadow-map渲染管线，四个方向键控制海豚
+# Input processing:
+Press the number key 8 to switch the shadow-map rendering pipeline, and the four direction keys control the dolphin
