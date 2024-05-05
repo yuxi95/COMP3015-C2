@@ -23,9 +23,9 @@ shadow map viewprot
 The generation of the depth map itself belongs to render-to-texture technology. We can set up a 128x128 viewport and then draw a screen-quad of the depth map to view the texture.
 
 # Input processing:
-Press the number key 8 to switch the shadow-map rendering pipeline, and the four direction keys control the dolphin
-KEY_1:
-  Diffuse
+Press the number key 8 to switch the shadow-map rendering pipeline, and the four direction keys control the dolphin 
+KEY_1: 
+Diffuse
 KEY_2:
   Specular
 KEY_3:
