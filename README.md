@@ -11,8 +11,7 @@ Generate depth-texture, using float format to meet the accuracy required for sha
 Bind depth-texture to depth-attachment of FBO
 Use std::vector to save objects that produce shadows in the scene
 
-# Frame start:
-# Game logic:
+# Frame start -- Game logic:
 
 Activate FBO and draw depth map
 Traverse the scene object vecotr, use depth.vert/frag shader to draw the scene from the light perspective, and obtain the depth map of the light direction.
