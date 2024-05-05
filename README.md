@@ -25,21 +25,21 @@ The generation of the depth map itself belongs to render-to-texture technology. 
 # Input processing:
 Press the number key 8 to switch the shadow-map rendering pipeline, and the four direction keys control the dolphin
 KEY_1:
-Diffuse
+  Diffuse
 KEY_2:
-Specular
+  Specular
 KEY_3:
-SpotLight
+  SpotLight
 KEY_4:
-ToonShading
+  ToonShading
 KEY_5:
-FlatShading 
+  FlatShading 
 KEY_6:
-		Fog 
+	  	Fog 
 KEY_7:
-		PBR 
+	  	PBR 
 KEY_8:
-		Shadow
+	  	Shadow
  KEY_SPACE:
-		Animation
-up down left right control the dolphin move
+	  	Animation
+  up down left right control the dolphin move
