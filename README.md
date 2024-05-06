@@ -22,6 +22,20 @@ Traverse the scene object vecotr, use shadowmap.vert/frag shader to draw the sce
 shadow map viewprot
 The generation of the depth map itself belongs to render-to-texture technology. We can set up a 128x128 viewport and then draw a screen-quad of the depth map to view the texture.
 
+PBR：
+Calculate the world coordinates of the vertex and use the model matrix to transform the vertex position from model space to world space.
+WorldPos = vec3(model * vec4(aPos, 1.0));
+Transform normals from model space to world space for lighting calculations.
+Normal = normalMatrix * aNormal;
+Calculate the screen coordinates of the vertex, transformed by a combination of projection matrix, view matrix and model matrix.
+gl_Position = projection * view * vec4(WorldPos, 1.0);
+Texture reflection first
+Calculate base reflectance
+vec3 F0 = mix(vec3(0.04), albedo, metallic);
+The light cycle traverses all light sources and calculates the contribution of each light source.
+Combined with ambient and reflected light, tone mapping and gamma correction are applied to complete the final output of color.
+vec3 ambient = vec3(0.03) * albedo * ao; vec3 color = ambient + Lo; color = color / (color + vec3(1.0)); color = pow(color, vec3(1.0/2.2)); FragColor = vec4( color, 1.0);
+
 # Input processing:
 Press the number key 8 to switch the shadow-map rendering pipeline, and the four direction keys control the dolphin 
 KEY_1: 
